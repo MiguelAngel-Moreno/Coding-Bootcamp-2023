@@ -37,7 +37,7 @@ Please start by opening the project group file "MasteringXmlWithDelphiGroup.grou
 ```
 <br>
 
-This will clone the XML Mapper Help repository in your local development machine.
+This will clone the "Coding Bootcamp 2023/Mastering XML with Delphi" repository in your local development machine.
 
 <br>
 
