@@ -1,0 +1,201 @@
+object XmlTreeViewForm: TXmlTreeViewForm
+  Left = 0
+  Top = 0
+  Caption = 'XML Viewer'
+  ClientHeight = 634
+  ClientWidth = 797
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object TabControlMain: TTabControl
+    Align = Client
+    Size.Width = 797.000000000000000000
+    Size.Height = 594.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 3
+    TabPosition = PlatformDefault
+    OnChange = TabControlMainChange
+    Sizes = (
+      797s
+      568s
+      797s
+      568s)
+    object TabItemTreeView: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 110.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemTreeView'
+      ExplicitSize.cx = 83.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object TreeView1: TTreeView
+        Align = Client
+        Size.Width = 797.000000000000000000
+        Size.Height = 568.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        AlternatingRowBackground = True
+        Viewport.Width = 793.000000000000000000
+        Viewport.Height = 564.000000000000000000
+        object TreeViewItem1: TTreeViewItem
+          IsChecked = False
+          IsExpanded = True
+          IsSelected = False
+          TabOrder = 0
+          Text = 'TreeViewItem1'
+          object TreeViewItem2: TTreeViewItem
+            StyledSettings = [Family, Size, Style]
+            TextSettings.FontColor = xFF423A8E
+            IsChecked = False
+            IsExpanded = True
+            IsSelected = False
+            TabOrder = 0
+            Text = 'TreeViewItem2'
+            object TreeViewItem3: TTreeViewItem
+              StyledSettings = [Family, Size, Style]
+              TextSettings.FontColor = xFF5671C6
+              IsChecked = False
+              IsExpanded = False
+              IsSelected = False
+              TabOrder = 0
+              Text = 'TreeViewItem3'
+            end
+          end
+          object TreeViewItem4: TTreeViewItem
+            IsChecked = False
+            IsExpanded = True
+            IsSelected = False
+            TabOrder = 1
+            Text = 'TreeViewItem4'
+            object TreeViewItem5: TTreeViewItem
+              StyledSettings = [Family, Size, Style]
+              TextSettings.FontColor = xFFCD7415
+              IsChecked = False
+              IsExpanded = True
+              IsSelected = False
+              TabOrder = 0
+              Text = 'TreeViewItem5'
+              object TreeViewItem6: TTreeViewItem
+                StyledSettings = [Family, Size, Style]
+                TextSettings.FontColor = xFF9E9258
+                IsChecked = False
+                IsExpanded = False
+                IsSelected = False
+                TabOrder = 0
+                Text = 'TreeViewItem6'
+              end
+            end
+          end
+          object TreeViewItem7: TTreeViewItem
+            StyledSettings = [Family, Size, Style]
+            TextSettings.FontColor = xFFBE5F5F
+            IsChecked = False
+            IsExpanded = False
+            IsSelected = False
+            TabOrder = 2
+            Text = 'TreeViewItem7'
+          end
+        end
+      end
+    end
+    object TabItemXmlView: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 108.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItemXmlView'
+      ExplicitSize.cx = 80.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object MemoXmlView: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        StyledSettings = []
+        TextSettings.Font.Family = 'Consolas'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = xFF378D3D
+        Align = Client
+        Size.Width = 797.000000000000000000
+        Size.Height = 568.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 793.000000000000000000
+        Viewport.Height = 564.000000000000000000
+      end
+    end
+  end
+  object ToolBarTop: TToolBar
+    Size.Width = 797.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object LabelViewerTitle: TLabel
+      Align = Left
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 623.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'listboxheaderlabel'
+      Text = 'XML Viewer'
+      TabOrder = 1
+    end
+    object XmlTextButton: TSpeedButton
+      Action = NextTabAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 717.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'speedbuttonstyle'
+      Text = 'XML Text'
+    end
+    object TreeViewButton: TSpeedButton
+      Action = PreviousTabAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 637.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'speedbuttonstyle'
+      Text = 'Tree View'
+    end
+  end
+  object XMLDocument1: TXMLDocument
+    Options = [doAutoPrefix, doNamespaceDecl]
+    Left = 184
+    Top = 540
+    DOMVendorDesc = 'Omni XML'
+  end
+  object ActionList1: TActionList
+    Left = 280
+    Top = 540
+    object NextTabAction: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControlMain
+    end
+    object PreviousTabAction: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControlMain
+    end
+  end
+end

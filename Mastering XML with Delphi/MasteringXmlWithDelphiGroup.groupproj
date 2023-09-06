@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A30EE946-B047-43B4-9429-133976899D7A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="1 - XML Document Model\XmlDocumentModelApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="2 - XML Transformed to DataSet\XmlTransormToDataSetApp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="XmlDocumentModelApp">
+        <MSBuild Projects="1 - XML Document Model\XmlDocumentModelApp.dproj"/>
+    </Target>
+    <Target Name="XmlDocumentModelApp:Clean">
+        <MSBuild Projects="1 - XML Document Model\XmlDocumentModelApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="XmlDocumentModelApp:Make">
+        <MSBuild Projects="1 - XML Document Model\XmlDocumentModelApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="XmlTransormToDataSetApp">
+        <MSBuild Projects="2 - XML Transformed to DataSet\XmlTransormToDataSetApp.dproj"/>
+    </Target>
+    <Target Name="XmlTransormToDataSetApp:Clean">
+        <MSBuild Projects="2 - XML Transformed to DataSet\XmlTransormToDataSetApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="XmlTransormToDataSetApp:Make">
+        <MSBuild Projects="2 - XML Transformed to DataSet\XmlTransormToDataSetApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="XmlDocumentModelApp;XmlTransormToDataSetApp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="XmlDocumentModelApp:Clean;XmlTransormToDataSetApp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="XmlDocumentModelApp:Make;XmlTransormToDataSetApp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
